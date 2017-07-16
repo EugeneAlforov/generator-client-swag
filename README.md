@@ -2,7 +2,6 @@
 
 This is a yeoman generator for a faster client side development
 
-```
 ## Installing
 
 Run from your terminal:
