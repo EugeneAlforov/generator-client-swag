@@ -24,10 +24,10 @@ Then enter your component name using PascalCase
 Will create next file structure:
 ```
 +-- {{component-name}}
-|   +-- index.js
-|   +-- {{compnent-name}}.jsx
-|   +-- {{compnent-name}}.spec.jsx
-|   +-- {{compnent-name}}.scss
+|   -- index.js
+|   -- {{compnent-name}}.jsx
+|   -- {{compnent-name}}.spec.jsx
+|   -- {{compnent-name}}.scss
 ```
 ## Smart component (connected to redux)
 
@@ -38,11 +38,13 @@ yo client-swag:container
 Then enter your component name using PascalCase
 
 Will create next file structure:
+```
 +-- {{component-name}}
-|   +-- index.js
-|   +-- {{compnent-name}}.jsx
-|   +-- {{compnent-name}}.spec.jsx
-|   +-- {{compnent-name}}.scss
+|   -- index.js
+|   -- {{compnent-name}}.jsx
+|   -- {{compnent-name}}.spec.jsx
+|   -- {{compnent-name}}.scss
+```
 
 ## Redux store slice
 
@@ -53,8 +55,10 @@ yo client-swag:redux
 Then enter your store slice name using camelCase
 
 Will create next file structure:
+```
 +-- {{slice-name}}
-|   +-- {{slice-name}}.reduce.js
-|   +-- {{slice-name}}.actions.js
-|   +-- {{slice-name}}.selectors.js
-|   +-- {{slice-name}}.dispatchers.js
+|   -- {{slice-name}}.reduce.js
+|   -- {{slice-name}}.actions.js
+|   -- {{slice-name}}.selectors.js
+|   -- {{slice-name}}.dispatchers.js
+```
