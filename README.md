@@ -22,12 +22,13 @@ yo client-swag
 Then enter your component name using PascalCase
 
 Will create next file structure:
+```
 +-- {{component-name}}
 |   +-- index.js
 |   +-- {{compnent-name}}.jsx
 |   +-- {{compnent-name}}.spec.jsx
 |   +-- {{compnent-name}}.scss
-
+```
 ## Smart component (connected to redux)
 
 ```{r, engine='bash'}
