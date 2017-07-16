@@ -57,7 +57,7 @@ Then enter your store slice name using camelCase
 Will create next file structure:
 ```
 +-- {{slice-name}}
-|   -- {{slice-name}}.reduce.js
+|   -- {{slice-name}}.reducor.js
 |   -- {{slice-name}}.actions.js
 |   -- {{slice-name}}.selectors.js
 |   -- {{slice-name}}.dispatchers.js
