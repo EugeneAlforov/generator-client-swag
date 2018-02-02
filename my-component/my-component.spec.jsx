@@ -2,11 +2,11 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import { <%= componentName %> } from './<%= fileName %>.jsx';
+import { MyComponent } from './my-component.jsx';
 
-describe('<%= componentName %> Component', () => {
+describe('MyComponent Component', () => {
   it('should render without exploding', () => {
-    const wrapper = shallow(<<%= componentName %> />);
+    const wrapper = shallow(<MyComponent />);
     expect(wrapper).to.have.length(1);
   });
 });

@@ -1,26 +1,19 @@
 const Generator = require('yeoman-generator');
-const path = require('path');
 const mkdirp = require('mkdirp');
 
 module.exports = class extends Generator {
+    constructor(...args) {
+      super(...args);
+
+      this.argument('componentName', { type: String, default: 'Component', required: true });
+    }
     initializing() {
         this.props = {};
     }
 
-    prompting() {
-        var prompts = [{
-            name: 'componentName',
-            message: 'Enter component name',
-            default: 'Component'
-        }];
-
-        return this.prompt(prompts).then((answers) => {
-            this.props = answers;
-        });
-    }
-
     writing() {
-        const dashedName = camelCaseToDash(this.props.componentName);
+        const dashedName = camelCaseToDash(this.options.componentName);
+        this.props.componentName = this.options.componentName;
         this.props.fileName = dashedName;
         const folderPath = `${process.cwd()}/${dashedName}`;
 

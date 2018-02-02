@@ -3,49 +3,40 @@ const path = require('path');
 const mkdirp = require('mkdirp');
 
 module.exports = class extends Generator {
-    initializing() {
-        this.props = {};
-    }
+  initializing() {
+    this.props = {};
 
-    prompting() {
-        var prompts = [{
-            name: 'sliceName',
-            message: 'Enter redux slice name',
-            default: 'some'
-        }];
+    this.argument('sliceName', { type: String, default: 'redux-slice', required: true });
+  }
 
-        return this.prompt(prompts).then((answers) => {
-            this.props = answers;
-        });
-    }
+  writing() {
+    const dashedName = camelCaseToDash(this.options.sliceName);
+    this.props.sliceName = this.options.sliceName;
+    this.props.fileName = dashedName;
+    const folderPath = `${process.cwd()}/${dashedName}`;
+    this.props.prefix = dashCaseToUppercase(dashedName) + '_';
 
-    writing() {
-        const dashedName = camelCaseToDash(this.props.sliceName);
-        this.props.fileName = dashedName;
-        const folderPath = `${process.cwd()}/${dashedName}`;
-        this.props.prefix = dashCaseToUppercase(dashedName) + '_';
-
-        mkdirp.sync(this.destinationPath(`${process.cwd()}/${dashedName}`));
-        this.fs.copyTpl(
-            this.templatePath('actions.js'),
-            this.destinationPath(`${folderPath}/${dashedName}.actions.js`),
-            this.props
-        );
-        this.fs.copyTpl(
-            this.templatePath('reducer.js'),
-            this.destinationPath(`${folderPath}/${dashedName}.reducer.js`),
-            this.props
-        );
-        this.fs.copyTpl(
-            this.templatePath('selectors.js'),
-            this.destinationPath(`${folderPath}/${dashedName}.selectors.js`)
-        );
-        this.fs.copyTpl(
-            this.templatePath('dispatchers.js'),
-            this.destinationPath(`${folderPath}/${dashedName}.dispatchers.js`),
-            this.props
-        );
-    }
+    mkdirp.sync(this.destinationPath(`${process.cwd()}/${dashedName}`));
+    this.fs.copyTpl(
+      this.templatePath('actions.js'),
+      this.destinationPath(`${folderPath}/${dashedName}.actions.js`),
+      this.props
+    );
+    this.fs.copyTpl(
+      this.templatePath('reducer.js'),
+      this.destinationPath(`${folderPath}/${dashedName}.reducer.js`),
+      this.props
+    );
+    this.fs.copyTpl(
+      this.templatePath('selectors.js'),
+      this.destinationPath(`${folderPath}/${dashedName}.selectors.js`)
+    );
+    this.fs.copyTpl(
+      this.templatePath('dispatchers.js'),
+      this.destinationPath(`${folderPath}/${dashedName}.dispatchers.js`),
+      this.props
+    );
+  }
 };
 
 function camelCaseToDash(str) {

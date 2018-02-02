@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 
 import classes from './<%= fileName %>.scss';
 
-function <%= componentName %> () {
-    return (
-      <div><%= componentName %></div>
-    );
+export function <%= componentName %> () {
+  return (
+    <div><%= componentName %></div>
+  );
 }
 
 export default connect()(<%= componentName %>);
