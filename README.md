@@ -13,13 +13,11 @@ npm isntall generator-client-swag -g
 
 ## Usage
 
-## Dumb component (not connected to redux)
+## Dumb component with unit test (not connected to redux)
 
 ```{r, engine='bash'}
-yo client-swag
+yo client-swag:component {{ComponentName}}
 ```
-
-Then enter your component name using PascalCase
 
 Will create next file structure:
 ```
@@ -29,13 +27,25 @@ Will create next file structure:
 |   -- {{compnent-name}}.spec.jsx
 |   -- {{compnent-name}}.scss
 ```
-## Smart component (connected to redux)
+## Dumb component without unit test (not connected to redux)
 
+Adding --skip-test option will skip test file.
 ```{r, engine='bash'}
-yo client-swag:container
+yo client-swag:component {{ComponentName}} --skip-test
 ```
 
-Then enter your component name using PascalCase
+Will create next file structure:
+```
++-- {{component-name}}
+|   -- index.js
+|   -- {{compnent-name}}.jsx
+|   -- {{compnent-name}}.scss
+```
+
+## Smart component with unit test (connected to redux)
+```{r, engine='bash'}
+yo client-swag:container {{ConteinerName}}
+```
 
 Will create next file structure:
 ```
@@ -43,16 +53,29 @@ Will create next file structure:
 |   -- index.js
 |   -- {{compnent-name}}.jsx
 |   -- {{compnent-name}}.spec.jsx
+|   -- {{compnent-name}}.scss
+```
+
+## Smart component with unit test (connected to redux)
+
+Adding --skip-test option will skip test file.
+```{r, engine='bash'}
+yo client-swag:container {{ConteinerName}} --skip-test
+```
+
+Will create next file structure:
+```
++-- {{component-name}}
+|   -- index.js
+|   -- {{compnent-name}}.jsx
 |   -- {{compnent-name}}.scss
 ```
 
 ## Redux store slice
 
 ```{r, engine='bash'}
-yo client-swag:redux
+yo client-swag:redux {{sliceName}}
 ```
-
-Then enter your store slice name using camelCase
 
 Will create next file structure:
 ```
