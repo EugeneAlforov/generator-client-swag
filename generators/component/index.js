@@ -6,6 +6,7 @@ module.exports = class extends Generator {
       super(...args);
 
       this.argument('componentName', { type: String, default: 'Component', required: true });
+      this.option('skip-test', { type: Boolean });
     }
     initializing() {
         this.props = {};
@@ -32,6 +33,7 @@ module.exports = class extends Generator {
             this.destinationPath(`${folderPath}/index.js`),
             this.props
         );
+        if (this.options['skip-test']) return;
         this.fs.copyTpl(
             this.templatePath('component-folder/component.spec.jsx'),
             this.destinationPath(`${folderPath}/${this.props.fileName}.spec.jsx`),
