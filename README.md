@@ -13,7 +13,7 @@ npm isntall generator-client-swag -g
 
 ## Usage
 
-## Dumb component with unit test (not connected to redux)
+### Dumb component with unit test (not connected to redux)
 
 ```{r, engine='bash'}
 yo client-swag:component {{ComponentName}}
@@ -27,7 +27,7 @@ Will create next file structure:
 |   -- {{compnent-name}}.spec.jsx
 |   -- {{compnent-name}}.scss
 ```
-## Dumb component without unit test (not connected to redux)
+### Dumb component without unit test (not connected to redux)
 
 Adding --skip-test option will skip test file.
 ```{r, engine='bash'}
@@ -42,7 +42,7 @@ Will create next file structure:
 |   -- {{compnent-name}}.scss
 ```
 
-## Smart component with unit test (connected to redux)
+### Smart component with unit test (connected to redux)
 ```{r, engine='bash'}
 yo client-swag:container {{ConteinerName}}
 ```
@@ -56,7 +56,7 @@ Will create next file structure:
 |   -- {{compnent-name}}.scss
 ```
 
-## Smart component with unit test (connected to redux)
+### Smart component with unit test (connected to redux)
 
 Adding --skip-test option will skip test file.
 ```{r, engine='bash'}
@@ -71,7 +71,7 @@ Will create next file structure:
 |   -- {{compnent-name}}.scss
 ```
 
-## Redux store slice
+### Redux store slice
 
 ```{r, engine='bash'}
 yo client-swag:redux {{sliceName}}
