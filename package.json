@@ -3,7 +3,10 @@
   "version": "0.0.6",
   "description": "None",
   "main": "index.js",
-  "url": "https://github.com/Eugen1992/generator-client-swag",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Eugen1992/generator-client-swag.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
