@@ -25,8 +25,8 @@ module.exports = class extends Generator {
             this.props
         );
         this.fs.copyTpl(
-            this.templatePath('component-folder/style.scss'),
-            this.destinationPath(`${folderPath}/${this.props.fileName}.scss`)
+            this.templatePath('component-folder/style.css'),
+            this.destinationPath(`${folderPath}/${this.props.fileName}.css`)
         );
         this.fs.copyTpl(
             this.templatePath('component-folder/index.js'),
